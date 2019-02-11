@@ -11,8 +11,28 @@
  * @return mixed
  */
 function oikmp_poetry( $attributes, $content ) {
-	return oik_magnetic_poetry_example();
-	return $content;
+	//return oik_magnetic_poetry_example();
+	$lines = explode( "\n", $content );
+	sdiv( "wp-block-oik-block-magnetic-poetry mp");
+	foreach ( $lines as $line ) {
+		sp("mp");
+		$line = trim( $line );
+		oikmp_poetry_line( $line );
+		ep();
+
+	}
+	ediv( "mp");
+	$html = bw_ret();
+	return $html;
+}
+
+function oikmp_poetry_line( $line ) {
+	//e( $line );
+	$words = explode( " ", $line );
+	foreach ( $words as $word ) {
+		oikmp_word( $word );
+	}
+
 }
 
 /**
