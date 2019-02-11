@@ -12,6 +12,20 @@
  */
 function oikmp_poetry( $attributes, $content ) {
 	//return oik_magnetic_poetry_example();
+	if ( $content ) {
+		oikmp_poetry_content( $content );
+	} elseif ( function_exists( "hello_dolly_get_lyric")) {
+		$content = hello_dolly_get_lyric();
+		oikmp_poetry_content( $content );
+	} else {
+		oikmp_poetry_content( "Code is Poetry" );
+	}
+
+	$html = bw_ret();
+	return $html;
+}
+
+function oikmp_poetry_content( $content ) {
 	$lines = explode( "\n", $content );
 	sdiv( "wp-block-oik-block-magnetic-poetry mp");
 	foreach ( $lines as $line ) {
@@ -22,8 +36,6 @@ function oikmp_poetry( $attributes, $content ) {
 
 	}
 	ediv( "mp");
-	$html = bw_ret();
-	return $html;
 }
 
 function oikmp_poetry_line( $line ) {
