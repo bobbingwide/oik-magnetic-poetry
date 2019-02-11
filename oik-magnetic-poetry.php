@@ -1,34 +1,113 @@
 <?php
+/**
+ * Plugin Name: oik-magnetic-poetry
+ * Plugin URI: https://www.oik-plugins.com/oik-plugins/oik-magnetic-poetry
+ * Description: Magnetic poetry block
+ * Author: Herb Miller
+ * Author URI: https://herbmiller.me/about/mick
+ * Version: 0.0.0
+ * License: GPL3+
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
+ *
+ * @package oik-magnetic-poetry
+ */
 
-function oikmp_word( $word ) {
-	$rotter = oikmp_rotter( $word );
-	sepan( "mp $rotter", $word );
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+
+function oik_magnetic_poetry_loaded() {
+	add_action( "init", "oikmp_register_dynamic_blocks" );
+	add_action( 'enqueue_block_assets', 'oikmp_enqueue_block_assets');
+	add_action( 'enqueue_block_editor_assets', 'oikmp_enqueue_block_editor_assets' );
 }
 
-function oikmp_rotter( $word ) {
-	$rot = rand( -10, 10 );
-	return "mp$rot";
+function oikmp_register_dynamic_blocks() {
+
+	register_block_type( 'oik-block/magnetic-poetry',
+		[ 'render_callback' => 'oikmp_dynamic_block_poetry'
+		, 'editor_script' => 'oikmp-blocks-js'
+		, 'editor_style'    => 'oikmp-poetry'
+		, 'style'           => 'oikmp-poetry'
+		, 'attributes' => [
+				'content' => [ 'type' => 'string']
+			]
+		] );
+
 }
 
-function oik_magnetic_poetry_example() {
 
+/**
+ * Register, but don't enqueue magnetic-poetry assets.
+ *
+ */
 
-	sdiv( "mp");
-	sp();
-	oikmp_word( "I" );
-	oikmp_word( "sometimes" );
-	oikmp_word(  "play" );
-	oikmp_word( "golf" );
-	ep();
+function oikmp_enqueue_block_assets() {
+	bw_backtrace();
+	$styles = array( 'oikmp-poetry'  => 'css/oik-magnetic-poetry.css' );
 
-	sp();
-	oikmp_word( "Hit");
-	oikmp_word( "the" );
-	oikmp_word( "ball" );
-	oikmp_word( "in");
-	oikmp_word( "the");
-	oikmp_word( "air");
-	ediv();
-	bw_flush();
-	
+	foreach ( $styles as $name => $blockPath ) {
+
+		wp_register_style( $name,
+			plugins_url( $blockPath, __FILE__ ),
+			[],
+			//[ 'wp-blocks', 'wp-element', 'wp-components', 'wp-editor' ],
+			filemtime( plugin_dir_path( __FILE__ ) . $blockPath )
+		);
+	}
+
 }
+
+function oikmp_enqueue_block_editor_assets() {
+	oikmp_enqueue_block_assets();
+	oikmp_register_editor_scripts();
+}
+
+/**
+ * Registers the scripts we'll need	for the editor
+ *
+ * Not sure why we'll need Gutenberg scripts for the front-end.
+ * But we might need Javascript stuff for some things, so these can be registered here.
+ *
+ * Dependencies were initially
+                     * `[ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-api' ]`
+                     *
+ * why do we need the dependencies?
+ */
+function oikmp_register_editor_scripts() {
+	bw_trace2();
+	bw_backtrace();
+
+
+	$scripts = array( 'oikmp-blocks-js' => 'blocks/build/js/editor.blocks.js'
+	);
+	foreach ( $scripts as $name => $blockPath ) {
+		wp_register_script( $name,
+			plugins_url( $blockPath, __FILE__ ),
+			// [],
+			[ 'wp-blocks', 'wp-element', 'wp-components', 'wp-editor' ],
+			filemtime( plugin_dir_path(__FILE__) . $blockPath )
+		);
+		echo "$name $blockPath";
+
+	}
+
+}
+
+/**
+ * Server rendering dynamic Magnetic Poetry block
+ *
+ * @param array $attributes
+ * @return string generated HTML
+ */
+function oikmp_dynamic_block_poetry( $attributes ) {
+	//bw_backtrace();
+	$content = bw_array_get( $attributes, "content", null );
+	bw_trace2( $content, "Content" );
+	oik_require( "includes/oik-magnetic-poetry.php", "oik-magnetic-poetry" );
+	$html = oikmp_poetry( $attributes, $content );
+	bw_trace2( $html, "html", false );
+	return $html;
+}
+
+oik_magnetic_poetry_loaded();
