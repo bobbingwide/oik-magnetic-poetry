@@ -51,7 +51,7 @@ export default registerBlockType(
         category: 'formatting',
 
         // Dashicons Options - https://goo.gl/aTM1DQ
-        icon: 'editor',
+        icon: 'editor-customchar',
 
         // Limit to 3 Keywords / Phrases
         keywords: [
