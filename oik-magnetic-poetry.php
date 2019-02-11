@@ -54,13 +54,16 @@ function oikmp_enqueue_block_assets() {
 			//[ 'wp-blocks', 'wp-element', 'wp-components', 'wp-editor' ],
 			filemtime( plugin_dir_path( __FILE__ ) . $blockPath )
 		);
+		//echo "$name $blockPath";
 	}
+
 
 }
 
 function oikmp_enqueue_block_editor_assets() {
-	oikmp_enqueue_block_assets();
+
 	oikmp_register_editor_scripts();
+	oikmp_enqueue_block_assets();
 }
 
 /**
@@ -82,13 +85,13 @@ function oikmp_register_editor_scripts() {
 	$scripts = array( 'oikmp-blocks-js' => 'blocks/build/js/editor.blocks.js'
 	);
 	foreach ( $scripts as $name => $blockPath ) {
-		wp_register_script( $name,
+		wp_enqueue_script( $name,
 			plugins_url( $blockPath, __FILE__ ),
 			// [],
 			[ 'wp-blocks', 'wp-element', 'wp-components', 'wp-editor' ],
 			filemtime( plugin_dir_path(__FILE__) . $blockPath )
 		);
-		echo "$name $blockPath";
+		//echo "$name $blockPath";
 
 	}
 
@@ -102,6 +105,7 @@ function oikmp_register_editor_scripts() {
  */
 function oikmp_dynamic_block_poetry( $attributes ) {
 	//bw_backtrace();
+	wp_enqueue_style( 'oikmp-poetry' );
 	$content = bw_array_get( $attributes, "content", null );
 	bw_trace2( $content, "Content" );
 	oik_require( "includes/oik-magnetic-poetry.php", "oik-magnetic-poetry" );
