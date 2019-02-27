@@ -49,8 +49,8 @@ First version developed for "My Favourite Block", a lightning talk by Herb Mille
 * Added: Based on oik-blocks, [github bobbingwide oik-magnetic-poetry issues 1]
 * Added: Operates as a standalone plugin, [github bobbingwide oik-magnetic-poetry issues 2]
 * Added: Screenshots for blocks.
-* Tested: With WordPress 5.0.3
-* Tested: With Gutenberg 4.9.0
+* Tested: With WordPress 5.1
+* Tested: With Gutenberg 5.1.1
 * Tested: With PHP 7.2
 
 == Further reading ==

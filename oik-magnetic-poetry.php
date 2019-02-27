@@ -4,7 +4,7 @@
  * Plugin URI: https://www.oik-plugins.com/oik-plugins/oik-magnetic-poetry
  * Description: Magnetic poetry block
  * Author: Herb Miller
- * Author URI: https://herbmiller.me/about/mick
+ * Author URI: https://herbmiller.me/author/herb
  * Version: 0.0.0
  * License: GPL3+
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
