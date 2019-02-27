@@ -20,6 +20,7 @@ function oik_magnetic_poetry_loaded() {
 	add_action( "init", "oikmp_register_dynamic_blocks" );
 	add_action( 'enqueue_block_assets', 'oikmp_enqueue_block_assets');
 	add_action( 'enqueue_block_editor_assets', 'oikmp_enqueue_block_editor_assets' );
+	add_action( "plugins_loaded", "oik_magnetic_poetry_plugins_loaded", 100 );
 }
 
 function oikmp_register_dynamic_blocks() {
@@ -112,6 +113,30 @@ function oikmp_dynamic_block_poetry( $attributes ) {
 	$html = oikmp_poetry( $attributes, $content );
 	bw_trace2( $html, "html", false );
 	return $html;
+}
+
+/**
+ * Implements 'plugins_loaded' action for oik-magnetic-poetry
+ *
+ * Prepares use of shared libraries if this has not already been done.
+ */
+function oik_magnetic_poetry_plugins_loaded() {
+	oik_magnetic_poetry_boot_libs();
+	oik_require_lib( "bwtrace" );
+	oik_require_lib("bobbfunc");
+}
+
+/**
+ * Boot up process for shared libraries
+ *
+ * ... if not already performed
+ */
+function oik_magnetic_poetry_boot_libs() {
+	if ( !function_exists( "oik_require" ) ) {
+		$oik_boot_file = __DIR__ . "/libs/oik_boot.php";
+		$loaded = include_once( $oik_boot_file );
+	}
+	oik_lib_fallback( __DIR__ . "/libs" );
 }
 
 oik_magnetic_poetry_loaded();
