@@ -18,6 +18,7 @@ const {
 const {
     InspectorControls,
     PlainText,
+    ServerSideRender,
 } = wp.editor;
 
 const {
@@ -25,10 +26,8 @@ const {
     PanelBody,
     PanelRow,
     FormToggle,
-    ServerSideRender,
     TextControl,
     SelectControl,
-
 } = wp.components;
 
 import { map, partial } from 'lodash';
