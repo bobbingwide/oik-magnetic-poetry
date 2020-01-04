@@ -1,28 +1,30 @@
+/* oik-magnetic-poetry/style.scss
+*/
 /**
   magnetic.css for oik-magnetic-poetry
  */
 
 div.mp {
-    width: 100%;
-    font-family: "Times New Roman", serif;
-    font-size: 1.8em;
-    margin: 40px 2%;
+  width: 100%;
+  font-family: "Times New Roman", serif;
+  font-size: 1.8em;
+  margin: 40px 2%;
 }
 
 span.mp {
-    padding: 5px;
-    border: 1px solid grey;
-    margin: 5px 5px 5px 5px;
-    background: white;
-    display: inline-block;
+  padding: 5px;
+  border: 1px solid grey;
+  margin: 5px 5px 5px 5px;
+  background: white;
+  display: inline-block;
 }
 
 .mp p {
-    float: none;
-    clear: both;
-    line-height: 1em;
-    padding-top: 0em;
-    margin: 5px;
+  float: none;
+  clear: both;
+  line-height: 1em;
+  padding-top: 0em;
+  margin: 5px;
 }
 
 
@@ -47,4 +49,5 @@ span.mp.mp7 { transform: rotate( 7deg); }
 span.mp.mp8 { transform: rotate( 8deg); }
 span.mp.mp9 { transform: rotate( 9deg); }
 span.mp.mp10 { transform: rotate( 10deg); }
+
 

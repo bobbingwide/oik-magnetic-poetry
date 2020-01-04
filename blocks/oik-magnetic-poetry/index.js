@@ -3,10 +3,10 @@
  *
  * Uses logic from oik-magnetic-poetry plugin
  *
- * @copyright (C) Copyright Bobbing Wide 2019
+ * @copyright (C) Copyright Bobbing Wide 2019, 2020
  * @author Herb Miller @bobbingwide
  */
-//import './style.scss';
+import './style.scss';
 //import './editor.scss';
 
 // Get just the __() localization function from wp.i18n
@@ -14,6 +14,7 @@ const { __ } = wp.i18n;
 // Get registerBlockType from wp.blocks
 const {
     registerBlockType,
+    createBlock,
 } = wp.blocks;
 const {
     InspectorControls,
@@ -39,7 +40,7 @@ const Fragment = wp.element.Fragment;
  */
 export default registerBlockType(
     // Namespaced, hyphens, lowercase, unique name
-    'oik-block/magnetic-poetry',
+    'oik-mp/magnetic-poetry',
     {
         // Localize title using wp.i18n.__()
         title: __( 'Magnetic Poetry' ),
@@ -52,9 +53,9 @@ export default registerBlockType(
         // Dashicons Options - https://goo.gl/aTM1DQ
         icon: 'editor-customchar',
 
-        // Limit to 3 Keywords / Phrases
         keywords: [
-            __( 'magnetic poetry' ),
+            __( 'magnetic' ),
+            __( 'poetry' ),
             __( 'oik' ),
             __( 'verse'),
         ],
@@ -67,6 +68,43 @@ export default registerBlockType(
             },
 
 
+
+
+        },
+        example: {
+        },
+        transforms: {
+            from: [
+                {
+                    type: 'block',
+                    blocks: ['core/verse'],
+                    transform: function( attributes ) {
+                        return createBlock( 'oik-mp/magnetic-poetry', {
+                            content: attributes.content,
+                        });
+                    },
+                },
+                {
+                    type: 'block',
+                    blocks: ['oik-block/magnetic-poetry'],
+                    transform: function( attributes ) {
+                        return createBlock( 'oik-mp/magnetic-poetry', {
+                            content: attributes.content,
+                        });
+                    },
+                },
+            ],
+            to: [
+                {
+                    type: 'block',
+                    blocks: ['core/verse'],
+                    transform: function( attributes ) {
+                        return createBlock( 'core/verse', {
+                            content: attributes.content,
+                        });
+                    },
+                },
+             ]
         },
 
 
@@ -117,7 +155,7 @@ export default registerBlockType(
                     </InspectorControls>
                     {!isSelected &&
                     <ServerSideRender
-                        block="oik-block/magnetic-poetry" attributes={props.attributes}
+                        block="oik-mp/magnetic-poetry" attributes={props.attributes}
                     />
                     }
 

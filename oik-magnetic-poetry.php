@@ -18,18 +18,21 @@ defined( 'ABSPATH' ) || exit;
 
 function oik_magnetic_poetry_loaded() {
 	add_action( "init", "oikmp_register_dynamic_blocks" );
-	add_action( 'enqueue_block_assets', 'oikmp_enqueue_block_assets');
-	add_action( 'enqueue_block_editor_assets', 'oikmp_enqueue_block_editor_assets' );
+	//add_action( 'enqueue_block_assets', 'oikmp_enqueue_block_assets');
+	//add_action( 'enqueue_block_editor_assets', 'oikmp_enqueue_block_editor_assets' );
 	add_action( "plugins_loaded", "oik_magnetic_poetry_plugins_loaded", 100 );
 }
 
 function oikmp_register_dynamic_blocks() {
+	$library_file = oik_require_lib( 'oik-blocks');
+	oik\oik_blocks\oik_blocks_register_editor_scripts(  'oik-magnetic-poetry', 'oik-magnetic-poetry');
+	oik\oik_blocks\oik_blocks_register_block_styles( 'oik-magnetic-poetry' );
 
-	register_block_type( 'oik-block/magnetic-poetry',
+	register_block_type( 'oik-mp/magnetic-poetry',
 		[ 'render_callback' => 'oikmp_dynamic_block_poetry'
-		, 'editor_script' => 'oikmp-blocks-js'
-		, 'editor_style'    => 'oikmp-poetry'
-		, 'style'           => 'oikmp-poetry'
+		, 'editor_script' => 'oik-magnetic-poetry-blocks-js'
+		, 'editor_style'    => 'oik-magnetic-poetry-blocks-css'
+		, 'style'           => 'oik-magnetic-poetry-blocks-css'
 		, 'attributes' => [
 				'content' => [ 'type' => 'string']
 			]
