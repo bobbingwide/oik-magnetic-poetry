@@ -17,10 +17,12 @@ const {
     createBlock,
 } = wp.blocks;
 const {
-    InspectorControls,
-    PlainText,
     ServerSideRender,
 } = wp.editor;
+const {
+    InspectorControls,
+    PlainText,
+} = wp.blockEditor;
 
 const {
     Toolbar,
