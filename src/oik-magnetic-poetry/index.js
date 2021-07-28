@@ -9,70 +9,32 @@
 import './style.scss';
 //import './editor.scss';
 
-// Get just the __() localization function from wp.i18n
-const { __ } = wp.i18n;
+
+import { __ } from '@wordpress/i18n';
+import classnames from 'classnames';
+
 // Get registerBlockType from wp.blocks
-const {
-    registerBlockType,
-    createBlock,
-} = wp.blocks;
-const {
-    ServerSideRender,
-} = wp.editor;
-const {
-    InspectorControls,
-    PlainText,
-} = wp.blockEditor;
-
-const {
-    Toolbar,
-    PanelBody,
-    PanelRow,
-    FormToggle,
-    TextControl,
-    SelectControl,
-} = wp.components;
-
+import { registerBlockType } from '@wordpress/blocks';
+import {AlignmentControl, BlockControls, InspectorControls, useBlockProps, PlainText} from '@wordpress/block-editor';
+import ServerSideRender from '@wordpress/server-side-render';
+import {
+	Toolbar,
+	PanelBody,
+	PanelRow,
+	FormToggle,
+	TextControl,
+	SelectControl } from '@wordpress/components';
+import { Fragment} from '@wordpress/element';
 import { map, partial } from 'lodash';
-const Fragment = wp.element.Fragment;
 
+import metadata from '../../block.json';
 
 /**
  * Register the WordPress block
  */
-export default registerBlockType(
-    // Namespaced, hyphens, lowercase, unique name
-    'oik-mp/magnetic-poetry',
-    {
-        // Localize title using wp.i18n.__()
-        title: __( 'Magnetic Poetry' ),
 
-        description: 'Write magnetic poetry refrigerator messages',
-
-        // Category Options: common, formatting, layout, widgets, embed
-        category: 'formatting',
-
-        // Dashicons Options - https://goo.gl/aTM1DQ
-        icon: 'editor-customchar',
-
-        keywords: [
-            __( 'magnetic' ),
-            __( 'poetry' ),
-            __( 'oik' ),
-            __( 'verse'),
-        ],
-
-        // Set for each piece of dynamic data used in your block
-        attributes: {
-
-            content: {
-                type: 'string',
-            },
-
-
-
-
-        },
+export default registerBlockType( metadata,
+	{
         example: {
         },
         transforms: {
@@ -110,13 +72,15 @@ export default registerBlockType(
         },
 
 
-        supports: {
-            customClassName: false,
-            className: false,
-            html: false,
-        },
-
         edit: props => {
+
+			const { textAlign, label } = props.attributes;
+
+			const blockProps = useBlockProps( {
+				className: classnames( {
+					[ `has-text-align-${ textAlign }` ]: textAlign,
+				} ),
+			} );
 
             const onChangeContent = ( value ) => {
                 props.setAttributes( { content: value } );
@@ -145,6 +109,14 @@ export default registerBlockType(
 
             return (
                 <Fragment>
+					<BlockControls group="block">
+						<AlignmentControl
+							value={ textAlign }
+							onChange={ ( nextAlign ) => {
+								props.setAttributes( { textAlign: nextAlign } );
+							} }
+						/>
+					</BlockControls>
                     <InspectorControls >
                         <PanelBody>
 
@@ -156,13 +128,16 @@ export default registerBlockType(
 
                     </InspectorControls>
                     {!isSelected &&
+					<div { ...blockProps}>
                     <ServerSideRender
                         block="oik-mp/magnetic-poetry" attributes={props.attributes}
                     />
+					</div>
                     }
 
                     {isSelected &&
-                    <div className="wp-block-oik-block-magnetic-poetry" key="content-input">
+
+					<div { ...blockProps}>
                         <PlainText
                             value={props.attributes.content}
                             placeholder={__('Write poetry')}

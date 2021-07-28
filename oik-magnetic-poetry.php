@@ -5,13 +5,13 @@
  * Description: Magnetic poetry block
  * Author: Herb Miller
  * Author URI: https://herbmiller.me/author/herb
- * Version: 0.1.0
+ * Version: 0.2.0
  * License: GPL3+
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package oik-magnetic-poetry
  *
-(C) Copyright 2018-2020 Bobbing Wide (email : herb@bobbingwide.com )
+(C) Copyright 2018-2021 Bobbing Wide (email : herb@bobbingwide.com )
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 2,
@@ -44,6 +44,7 @@ function oik_magnetic_poetry_loaded() {
  */
 function oikmp_register_dynamic_blocks() {
 	$library_file = oik_require_lib( 'oik-blocks' );
+	/*
 	oik\oik_blocks\oik_blocks_register_editor_scripts(  'oik-magnetic-poetry', 'oik-magnetic-poetry');
 	oik\oik_blocks\oik_blocks_register_block_styles( 'oik-magnetic-poetry' );
 	register_block_type( 'oik-mp/magnetic-poetry',
@@ -55,6 +56,10 @@ function oikmp_register_dynamic_blocks() {
 				'content' => [ 'type' => 'string']
 			]
 		] );
+	*/
+	$args = [ 'render_callback' => 'oikmp_dynamic_block_poetry'];
+	$registered = register_block_type_from_metadata( __DIR__, $args );
+	//bw_trace2( $registered, "registered", false );
 }
 
 /**
@@ -70,9 +75,25 @@ function oikmp_dynamic_block_poetry( $attributes ) {
 	//bw_trace2( $content, "Content" );
 	oik_require( "includes/oik-magnetic-poetry.php", "oik-magnetic-poetry" );
 	$html = oikmp_poetry( $attributes, $content );
+	$html = oikmp_server_side_wrapper( $attributes, $html );
 	//bw_trace2( $html, "html", false );
 	return $html;
 }
+
+function oikmp_server_side_wrapper( $attributes, $html ) {
+	$align_class_name=empty( $attributes['textAlign'] ) ? '' : "has-text-align-{$attributes['textAlign']}";
+	$extra_attributes  =[ 'class'=>$align_class_name ];
+	$wrapper_attributes = get_block_wrapper_attributes( $extra_attributes );
+
+	$html=sprintf(
+		'<div %1$s>%2$s</div>',
+		$wrapper_attributes,
+		$html
+	);
+
+	return $html;
+}
+
 
 /**
  * Implements 'plugins_loaded' action for oik-magnetic-poetry.
