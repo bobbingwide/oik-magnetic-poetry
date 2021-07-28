@@ -27,7 +27,7 @@ import {
 import { Fragment} from '@wordpress/element';
 import { map, partial } from 'lodash';
 
-import metadata from '../../block.json';
+import metadata from './block.json';
 
 /**
  * Register the WordPress block

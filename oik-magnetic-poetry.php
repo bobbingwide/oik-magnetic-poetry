@@ -58,7 +58,7 @@ function oikmp_register_dynamic_blocks() {
 		] );
 	*/
 	$args = [ 'render_callback' => 'oikmp_dynamic_block_poetry'];
-	$registered = register_block_type_from_metadata( __DIR__, $args );
+	$registered = register_block_type_from_metadata( __DIR__ . '/src/oik-magnetic-poetry', $args );
 	//bw_trace2( $registered, "registered", false );
 }
 
