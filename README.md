@@ -6,7 +6,7 @@
 * Requires at least: 5.0.3
 * Tested up to: 5.8
 * Gutenberg compatible: Yes
-* Stable tag: 0.2.0
+* Stable tag: 0.2.1
 * License: GPLv3 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ But you can write some custom CSS.
 2. Magnetic poetry block - default display front end
 
 ## Upgrade Notice 
+# 0.2.1 
+Refactored to load block.json from the block's src folder.
+
 # 0.2.0 
 Now compatible with WordPress 5.8 block widget editor.
 
@@ -52,6 +55,9 @@ Now uses shared library functions for Server Side Rendered blocks.
 First version developed for "My Favourite Block", a lightning talk by Herb Miller.
 
 ## Changelog 
+# 0.2.0 
+* Changed: Refactored to load block.json from the block's src folder.
+
 # 0.2.0 
 * Changed: Refactored to be compatible with WordPress 5.8. Built using wp-scripts #4
 * Tested: With WordPress 5.8 and WordPress Multi Site
