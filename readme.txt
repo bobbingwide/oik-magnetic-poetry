@@ -3,9 +3,9 @@ Contributors: bobbingwide
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: gutenberg, shortcode, blocks, oik
 Requires at least: 5.0.3
-Tested up to: 5.3.2
+Tested up to: 5.8
 Gutenberg compatible: Yes
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,9 @@ But you can write some custom CSS.
 2. Magnetic poetry block - default display front end
 
 == Upgrade Notice ==
+= 0.2.0 = 
+Now compatible with WordPress 5.8 block widget editor. 
+
 = 0.1.0 = 
 Now uses shared library functions for Server Side Rendered blocks.
 
@@ -48,6 +51,12 @@ Now uses shared library functions for Server Side Rendered blocks.
 First version developed for "My Favourite Block", a lightning talk by Herb Miller.
 
 == Changelog ==
+= 0.2.0 = 
+* Changed: Refactored to be compatible with WordPress 5.8. Built using wp-scripts #4
+* Tested: With WordPress 5.8 and WordPress Multi Site
+* Tested: With PHP 8.0
+* Tested: With Gutenberg 11.1.0
+
 = 0.1.0 =
 * Changed: eliminate redundant code now we're using the shared libraries
 * Changed: update to remove deprecated messages from the console
@@ -69,7 +78,7 @@ First version developed for "My Favourite Block", a lightning talk by Herb Mille
 For more useful blocks see [oik-blocks](https://www.oik-plugins.com/blocks).
 For many other blocks see [WordPress block reference](https://blocks.wp-a2z.org)
 
-If you want to read more about oik plugins then please visit the
-[oik plugin](https://www.oik-plugins.com/oik) 
-**"the oik plugin - for often included key-information"**
+If you want to read more about oik plugins then please visit 
+[oik plugins](https://www.oik-plugins.com) 
+
 
