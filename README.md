@@ -1,12 +1,12 @@
 # oik-magnetic-poetry 
-![banner](https://raw.githubusercontent.com/bobbingwide/oik-magnetic-poetry/master/assets/oik-magnetic-poetry-banner-772x250.jpg)
+![banner](assets/oik-magnetic-poetry-banner-772x250.jpg)
 * Contributors: bobbingwide
 * Donate link: https://www.oik-plugins.com/oik/oik-donate/
 * Tags: gutenberg, shortcode, blocks, oik
 * Requires at least: 5.0.3
-* Tested up to: 5.8
+* Tested up to: 5.8.1
 * Gutenberg compatible: Yes
-* Stable tag: 0.2.1
+* Stable tag: 0.2.2
 * License: GPLv3 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ But you can write some custom CSS.
 2. Magnetic poetry block - default display front end
 
 ## Upgrade Notice 
+# 0.2.2 
+Update to allow transforms from the Verse block. Now internationalized.
+
 # 0.2.1 
 Refactored to load block.json from the block's src folder.
 
@@ -55,7 +58,12 @@ Now uses shared library functions for Server Side Rendered blocks.
 First version developed for "My Favourite Block", a lightning talk by Herb Miller.
 
 ## Changelog 
-# 0.2.0 
+# 0.2.2 
+* Changed: Internationalized and localized #4
+* Fixed: Support transforms to/from the Verse block #4
+* Tested: With Gutenberg 11.4.1
+
+# 0.2.1 
 * Changed: Refactored to load block.json from the block's src folder.
 
 # 0.2.0 
