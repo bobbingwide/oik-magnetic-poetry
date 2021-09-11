@@ -1,0 +1,70 @@
+# Copyright (C) 2021 Herb Miller
+# This file is distributed under the GPL3+.
+msgid ""
+msgstr ""
+"Project-Id-Version: oik-magnetic-poetry 0.2.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/oik-magnetic-poetry\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Language: en_GB\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-09-11T11:23:19+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: oik-magnetic-poetry\n"
+msgid "oik-magnetic-poetry"
+msgstr "oik-magnetic-poetry"
+
+msgid "https://www.oik-plugins.com/oik-plugins/oik-magnetic-poetry"
+msgstr "https://www.oik-plugins.com/oik-plugins/oik-magnetic-poetry"
+
+msgid "Magnetic poetry block"
+msgstr "Magnetic poetry block"
+
+msgid "Herb Miller"
+msgstr "Herb Miller"
+
+msgid "https://herbmiller.me/author/herb"
+msgstr "https://herbmiller.me/author/herb"
+
+#: includes/oik-magnetic-poetry.php:21
+msgid "Code is Poetry"
+msgstr "Code is Poetry"
+
+#: build/index.js:1
+msgid "Write poetry"
+msgstr "Write poetry"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block title"
+msgid "Magnetic poetry"
+msgstr "Magnetic poetry"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block description"
+msgid "Write magnetic poetry refrigerator messages"
+msgstr "Write magnetic poetry refrigerator messages"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block keyword"
+msgid "magnetic"
+msgstr "magnetic"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block keyword"
+msgid "poetry"
+msgstr "poetry"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block keyword"
+msgid "oik"
+msgstr "oik"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block keyword"
+msgid "verse"
+msgstr "verse"
+

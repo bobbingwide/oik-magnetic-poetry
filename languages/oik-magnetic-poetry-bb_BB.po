@@ -1,0 +1,70 @@
+# Copyright (C) 2021 Herb Miller
+# This file is distributed under the GPL3+.
+msgid ""
+msgstr ""
+"Project-Id-Version: oik-magnetic-poetry 0.2.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/oik-magnetic-poetry\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Language: bb_BB\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-09-11T11:23:19+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: oik-magnetic-poetry\n"
+msgid "oik-magnetic-poetry"
+msgstr "OIk-mgaenitc-peorty"
+
+msgid "https://www.oik-plugins.com/oik-plugins/oik-magnetic-poetry"
+msgstr "https://www.oik-plugins.com/oik-plugins/oik-magnetic-poetry"
+
+msgid "Magnetic poetry block"
+msgstr "Mgaenitc peorty bolck"
+
+msgid "Herb Miller"
+msgstr "Hreb Mlielr"
+
+msgid "https://herbmiller.me/author/herb"
+msgstr "https://herbmiller.me/author/herb"
+
+#: includes/oik-magnetic-poetry.php:21
+msgid "Code is Poetry"
+msgstr "Cdoe Is Peorty"
+
+#: build/index.js:1
+msgid "Write poetry"
+msgstr "Wirte peorty"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block title"
+msgid "Magnetic poetry"
+msgstr "Mgaenitc peorty"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block description"
+msgid "Write magnetic poetry refrigerator messages"
+msgstr "Wirte mgaenitc peorty rfeiregarotr mseasegs"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block keyword"
+msgid "magnetic"
+msgstr "mgaenitc"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block keyword"
+msgid "poetry"
+msgstr "peorty"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block keyword"
+msgid "oik"
+msgstr "OIk"
+
+#: src/oik-magnetic-poetry/block.json
+msgctxt "block keyword"
+msgid "verse"
+msgstr "vrese"
+
