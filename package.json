@@ -1,9 +1,13 @@
 {
 	"name": "oik-magnetic-poetry",
-	"version": "0.2.0",
+	"version": "0.2.2",
 	"description": "Magnetic Poetry",
 	"author": "bobbingwide",
-	"license": "GPLv3",
+  	"license": "GPL-2.0-or-later",
+  	"repository": {
+		"type": "git",
+		"url": "git://github.com/bobbingwide/oik-magnetic-poetry.git"
+  	},
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build",
@@ -13,7 +17,7 @@
 		"start": "wp-scripts start",
 		"packages-update": "wp-scripts packages-update",
 		"dev": "wp-scripts start",
-		"makepot": "wp i18n make-pot . languages/oik-magnetic-poetry.pot --exclude=node_modules,vendor,src",
+		"makepot": "wp i18n make-pot . languages/oik-magnetic-poetry.pot --domain=oik-magnetic-poetry --exclude=node_modules,vendor,src/*.js",
 		"makejson": "wp i18n make-json languages --no-purge",
 		"l10n": "l10n oik-magnetic-poetry"
 	},
