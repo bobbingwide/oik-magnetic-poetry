@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright (C) Copyright Bobbing Wide 2019
+ * @copyright (C) Copyright Bobbing Wide 2019, 2021
  */
 
 /**
@@ -18,7 +18,7 @@ function oikmp_poetry( $attributes, $content ) {
 		$content = hello_dolly_get_lyric();
 		oikmp_poetry_content( $content );
 	} else {
-		oikmp_poetry_content( "Code is Poetry" );
+		oikmp_poetry_content( __( "Code is Poetry", 'oik-magnetic-poetry' ) );
 	}
 
 	$html = bw_ret();

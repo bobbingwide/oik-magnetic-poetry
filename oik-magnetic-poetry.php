@@ -5,7 +5,7 @@
  * Description: Magnetic poetry block
  * Author: Herb Miller
  * Author URI: https://herbmiller.me/author/herb
- * Version: 0.2.1
+ * Version: 0.2.2
  * License: GPL3+
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -43,23 +43,35 @@ function oik_magnetic_poetry_loaded() {
  * Registers the Magnetic Poetry block.
  */
 function oikmp_register_dynamic_blocks() {
-	$library_file = oik_require_lib( 'oik-blocks' );
-	/*
-	oik\oik_blocks\oik_blocks_register_editor_scripts(  'oik-magnetic-poetry', 'oik-magnetic-poetry');
-	oik\oik_blocks\oik_blocks_register_block_styles( 'oik-magnetic-poetry' );
-	register_block_type( 'oik-mp/magnetic-poetry',
-		[ 'render_callback' => 'oikmp_dynamic_block_poetry'
-		, 'editor_script' => 'oik-magnetic-poetry-blocks-js'
-		, 'editor_style'    => 'oik-magnetic-poetry-blocks-css'
-		, 'style'           => 'oik-magnetic-poetry-blocks-css'
-		, 'attributes' => [
-				'content' => [ 'type' => 'string']
-			]
-		] );
-	*/
 	$args = [ 'render_callback' => 'oikmp_dynamic_block_poetry'];
 	$registered = register_block_type_from_metadata( __DIR__ . '/src/oik-magnetic-poetry', $args );
 	//bw_trace2( $registered, "registered", false );
+	/**
+	 * Localise the script by loading the required strings for the build/index.js file
+	 * from the locale specific .json file in the languages folder.
+	 */
+	$ok = wp_set_script_translations( 'oik-mp-magnetic-poetry-editor-script', 'oik-magnetic-poetry' , __DIR__ .'/languages' );
+	add_filter( 'load_script_textdomain_relative_path', 'oikmp_load_script_textdomain_relative_path', 10, 2);
+}
+
+/**
+ * Filters $relative so that md5's match what's expected.
+ *
+ * Depending on how it was built the `build/index.js` may be preceded by `./` or `src/block-name/../../`.
+ * In either of these situations we want the $relative value to be returned as `build/index.js`.
+ * This then produces the correct md5 value and the .json file is found.
+ *
+ * @param $relative
+ * @param $src
+ *
+ * @return mixed
+ */
+function oikmp_load_script_textdomain_relative_path( $relative, $src ) {
+	if ( false !== strrpos( $relative, './build/index.js' )) {
+		$relative = 'build/index.js';
+	}
+	//bw_trace2( $relative, "relative");
+	return $relative;
 }
 
 /**
@@ -94,7 +106,6 @@ function oikmp_server_side_wrapper( $attributes, $html ) {
 	return $html;
 }
 
-
 /**
  * Implements 'plugins_loaded' action for oik-magnetic-poetry.
  *
@@ -104,6 +115,7 @@ function oik_magnetic_poetry_plugins_loaded() {
 	oik_magnetic_poetry_boot_libs();
 	oik_require_lib( "bwtrace" );
 	oik_require_lib( "bobbfunc" );
+	bw_load_plugin_textdomain( "oik-magnetic-poetry");
 }
 
 /**

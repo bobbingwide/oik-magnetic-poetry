@@ -3,17 +3,13 @@
  *
  * Uses logic from oik-magnetic-poetry plugin
  *
- * @copyright (C) Copyright Bobbing Wide 2019, 2020
+ * @copyright (C) Copyright Bobbing Wide 2019, 2020, 2021
  * @author Herb Miller @bobbingwide
  */
 import './style.scss';
-//import './editor.scss';
-
 
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
-
-// Get registerBlockType from wp.blocks
 import { registerBlockType, createBlock } from '@wordpress/blocks';
 import {AlignmentControl, BlockControls, InspectorControls, useBlockProps, PlainText} from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
@@ -27,13 +23,10 @@ import {
 import { Fragment} from '@wordpress/element';
 import { map, partial } from 'lodash';
 
-import metadata from './block.json';
-
 /**
  * Register the WordPress block
  */
-
-export default registerBlockType( metadata,
+export default registerBlockType( 'oik-mp/magnetic-poetry',
 	{
         example: {
         },
@@ -71,7 +64,6 @@ export default registerBlockType( metadata,
              ]
         },
 
-
         edit: props => {
 
 			const { textAlign, label } = props.attributes;
@@ -86,30 +78,11 @@ export default registerBlockType( metadata,
                 props.setAttributes( { content: value } );
             };
 
-            /**
-             * Attempt a generic function to apply a change
-             * using the partial technique
-             *
-             * key needs to be in [] otherwise it becomes a literal
-             *
-             */
-            //onChange={ partial( handleChange, 'someKey' ) }
-
-            function onChangeAttr( key, value ) {
-                //var nextAttributes = {};
-                //nextAttributes[ key ] = value;
-                //setAttributes( nextAttributes );
-                props.setAttributes( { [key] : value } );
-            };
-
             const isSelected = props.isSelected;
-
-
-
 
             return (
                 <Fragment>
-					<BlockControls group="block">
+					<BlockControls>
 						<AlignmentControl
 							value={ textAlign }
 							onChange={ ( nextAlign ) => {
@@ -117,21 +90,12 @@ export default registerBlockType( metadata,
 							} }
 						/>
 					</BlockControls>
-                    <InspectorControls >
-                        <PanelBody>
 
-                            <PanelRow>
-
-                            </PanelRow>
-
-                        </PanelBody>
-
-                    </InspectorControls>
                     {!isSelected &&
 					<div { ...blockProps}>
-                    <ServerSideRender
+                    	<ServerSideRender
                         block="oik-mp/magnetic-poetry" attributes={props.attributes}
-                    />
+                    	/>
 					</div>
                     }
 
@@ -140,21 +104,13 @@ export default registerBlockType( metadata,
 					<div { ...blockProps}>
                         <PlainText
                             value={props.attributes.content}
-                            placeholder={__('Write poetry')}
+                            placeholder={__('Write poetry','oik-magnetic-poetry')}
                             onChange={onChangeContent}
                         />
                     </div>
                     }
-
-
                 </Fragment>
-
             );
-        },
-
-
-        save() {
-            return null;
-        },
+        }
     },
 );
