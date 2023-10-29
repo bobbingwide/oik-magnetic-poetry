@@ -5,13 +5,13 @@
  * Description: Magnetic poetry block
  * Author: Herb Miller
  * Author URI: https://herbmiller.me/author/herb
- * Version: 0.2.2
+ * Version: 0.3.0
  * License: GPL3+
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package oik-magnetic-poetry
  *
-(C) Copyright 2018-2021 Bobbing Wide (email : herb@bobbingwide.com )
+(C) Copyright 2018-2023 Bobbing Wide (email : herb@bobbingwide.com )
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 2,

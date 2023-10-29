@@ -1,8 +1,8 @@
-# Copyright (C) 2021 Herb Miller
+# Copyright (C) 2023 Herb Miller
 # This file is distributed under the GPL3+.
 msgid ""
 msgstr ""
-"Project-Id-Version: oik-magnetic-poetry 0.2.2\n"
+"Project-Id-Version: oik-magnetic-poetry 0.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/oik-magnetic-poetry\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,9 +11,9 @@ msgstr ""
 "Language: bb_BB\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-09-11T11:23:19+00:00\n"
+"POT-Creation-Date: 2023-10-29T10:01:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: oik-magnetic-poetry\n"
 msgid "oik-magnetic-poetry"
 msgstr "OIk-mgaenitc-peorty"
@@ -38,31 +38,37 @@ msgstr "Cdoe Is Peorty"
 msgid "Write poetry"
 msgstr "Wirte peorty"
 
+#: build/oik-magnetic-poetry/block.json
 #: src/oik-magnetic-poetry/block.json
 msgctxt "block title"
 msgid "Magnetic poetry"
 msgstr "Mgaenitc peorty"
 
+#: build/oik-magnetic-poetry/block.json
 #: src/oik-magnetic-poetry/block.json
 msgctxt "block description"
 msgid "Write magnetic poetry refrigerator messages"
 msgstr "Wirte mgaenitc peorty rfeiregarotr mseasegs"
 
+#: build/oik-magnetic-poetry/block.json
 #: src/oik-magnetic-poetry/block.json
 msgctxt "block keyword"
 msgid "magnetic"
 msgstr "mgaenitc"
 
+#: build/oik-magnetic-poetry/block.json
 #: src/oik-magnetic-poetry/block.json
 msgctxt "block keyword"
 msgid "poetry"
 msgstr "peorty"
 
+#: build/oik-magnetic-poetry/block.json
 #: src/oik-magnetic-poetry/block.json
 msgctxt "block keyword"
 msgid "oik"
 msgstr "OIk"
 
+#: build/oik-magnetic-poetry/block.json
 #: src/oik-magnetic-poetry/block.json
 msgctxt "block keyword"
 msgid "verse"

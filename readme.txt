@@ -3,9 +3,9 @@ Contributors: bobbingwide
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: gutenberg, shortcode, blocks, oik
 Requires at least: 5.0.3
-Tested up to: 5.8.1
+Tested up to: 6.4-RC2
 Gutenberg compatible: Yes
-Stable tag: 0.2.2
+Stable tag: 0.3.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,12 +28,12 @@ If you don't write anything, and Hello Dolly is activated, then you'll see a ran
 If it's not activated then it'll be "Code is Poetry".
 No surprises there.
 
-= It sometimes looks a bit funny =
-Yes. It needs some better CSS.
 
-= Can I choose the font size and amount each word is rotated? =
+= Can I choose the font size? =
+Yes. Use block's Typography settings
+
+= Can I change the amount each word is rotated? =
 Not using the block's settings.
-But you can write some custom CSS.
 
 
 == Screenshots ==
@@ -41,6 +41,9 @@ But you can write some custom CSS.
 2. Magnetic poetry block - default display front end
 
 == Upgrade Notice ==
+= 0.3.0 =
+Upgrade for improved styling capability.
+
 = 0.2.2 =
 Update to allow transforms from the Verse block. Now internationalized.
 
@@ -57,6 +60,15 @@ Now uses shared library functions for Server Side Rendered blocks.
 First version developed for "My Favourite Block", a lightning talk by Herb Miller.
 
 == Changelog ==
+= 0.3.0 =
+* Changed: Update to latest wp-scripts #6
+* Changed: Update shared libraries for PHP 8.1 and PHP 8.2 and PHPUnit test #5
+* Changed: Enable Typography #3
+* Tested: With WordPress 6.4-RC2 and WordPress Multisite
+* Tested: With PHP 8.1 and PHP 8.2
+* Tested: With Gutenberg 16.8.1
+* Tested: With PHPUnit 9.6
+
 = 0.2.2 =
 * Changed: Internationalized and localized #4
 * Fixed: Support transforms to/from the Verse block #4
