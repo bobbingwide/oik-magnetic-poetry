@@ -28,6 +28,6 @@
 		"postcss": "^8.4.31"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.15.0"
+		"@wordpress/scripts": "^26.19.0"
 	}
 }
