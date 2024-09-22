@@ -1,4 +1,6 @@
-.editor-styles-wrapper p,
+.editor-styles-wrapper p {
+	font-size: inherit !important;
+}
 .mp p {
     font-size: inherit;
 }
