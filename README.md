@@ -4,9 +4,9 @@
 * Donate link: https://www.oik-plugins.com/oik/oik-donate/
 * Tags: gutenberg, shortcode, blocks, oik
 * Requires at least: 5.0.3
-* Tested up to: 6.4-RC2
+* Tested up to: 6.6.2
 * Gutenberg compatible: Yes
-* Stable tag: 0.3.0
+* Stable tag: 0.4.0
 * License: GPLv3 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ Not using the block's settings.
 2. Magnetic poetry block - default display front end
 
 ## Upgrade Notice 
+# 0.4.0 
+Update to removes the dependency on the ep() shared library function which is being renamed in oik-bwtrace
+
 # 0.3.0 
 Upgrade for improved styling capability.
 
@@ -61,6 +64,14 @@ Now uses shared library functions for Server Side Rendered blocks.
 First version developed for "My Favourite Block", a lightning talk by Herb Miller.
 
 ## Changelog 
+# 0.4.0 
+* Changed: Update to latest wp-scripts #6
+* Changed: Remove dependency on bobbfunc's ep() #13
+* Tested: With WordPress 6.6.2 and WordPress Multisite
+* Tested: With PHP 8.3
+* Tested: With Gutenberg 19.1.0
+* Tested: With PHPUnit 9.6
+
 # 0.3.0 
 * Changed: Update to latest wp-scripts #6
 * Changed: Update shared libraries for PHP 8.1 and PHP 8.2 and PHPUnit test #5
@@ -103,7 +114,6 @@ First version developed for "My Favourite Block", a lightning talk by Herb Mille
 
 ## Further reading 
 For more useful blocks see [oik-blocks](https://www.oik-plugins.com/blocks).
-For many other blocks see [WordPress block reference](https://blocks.wp-a2z.org)
 
 If you want to read more about oik plugins then please visit
 [oik plugins](https://www.oik-plugins.com)
