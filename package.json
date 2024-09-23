@@ -1,6 +1,6 @@
 {
 	"name": "oik-magnetic-poetry",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Magnetic Poetry",
 	"author": "bobbingwide",
 	"license": "GPL-2.0-or-later",
@@ -29,6 +29,6 @@
 		"postcss": "^8.4.31"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^29.0.0"
+		"@wordpress/scripts": "^30.0.2"
 	}
 }
