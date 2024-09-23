@@ -50,7 +50,7 @@
 	  },
     "keywords": [ "magnetic", "poetry", "oik", "verse" ],
 	"textdomain": "oik-magnetic-poetry",
-	"editorScript": "file:../../build/index.js",
-	"editorStyle": "file:../../build/index.css",
-	"style": "file:../../build/style-index.css"
+	"editorScript": "file:../../build/magnetic-poetry.js",
+	"editorStyle": "file:../../build/magnetid-poetry.css",
+	"style": "file:../../build/style-magnetic-poetry.css"
 }
