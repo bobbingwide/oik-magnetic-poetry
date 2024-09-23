@@ -5,13 +5,13 @@
  * Description: Magnetic poetry block
  * Author: Herb Miller
  * Author URI: https://herbmiller.me/author/herb
- * Version: 0.3.0
+ * Version: 0.4.0
  * License: GPL3+
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package oik-magnetic-poetry
  *
-(C) Copyright 2018-2023 Bobbing Wide (email : herb@bobbingwide.com )
+(C) Copyright 2018-2024 Bobbing Wide (email : herb@bobbingwide.com )
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 2,
@@ -67,10 +67,15 @@ function oikmp_register_dynamic_blocks() {
  * @return mixed
  */
 function oikmp_load_script_textdomain_relative_path( $relative, $src ) {
-	if ( false !== strrpos( $relative, './build/index.js' )) {
-		$relative = 'build/index.js';
+	bw_trace2();
+	//if ( false !== strrpos( $relative, './build/index.js' )) {
+	//	$relative = 'build/index.js';
+	//}
+	if ( false !== strpos( $src, '/oik-magnetic-poetry/src/' )) {
+		$relative='build/' . basename( $relative );
+		bw_trace2( $relative, "relative update");
 	}
-	//bw_trace2( $relative, "relative");
+
 	return $relative;
 }
 
