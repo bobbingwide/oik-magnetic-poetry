@@ -3,14 +3,14 @@
  *
  * Uses logic from oik-magnetic-poetry plugin
  *
- * @copyright (C) Copyright Bobbing Wide 2019, 2020, 2021
+ * @copyright (C) Copyright Bobbing Wide 2019, 2020, 2021, 2024
  * @author Herb Miller @bobbingwide
  */
 import './style.scss';
 import './editor.scss';
 
 import { __ } from '@wordpress/i18n';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import { registerBlockType, createBlock } from '@wordpress/blocks';
 import {AlignmentControl, BlockControls, InspectorControls, useBlockProps, PlainText} from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
@@ -70,7 +70,7 @@ export default registerBlockType( 'oik-mp/magnetic-poetry',
 			const { textAlign, label } = props.attributes;
 
 			const blockProps = useBlockProps( {
-				className: classnames( {
+				className: clsx( {
 					[ `has-text-align-${ textAlign }` ]: textAlign,
 				} ),
 			} );
