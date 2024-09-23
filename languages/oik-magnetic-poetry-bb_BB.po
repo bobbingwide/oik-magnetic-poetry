@@ -1,8 +1,8 @@
-# Copyright (C) 2023 Herb Miller
+# Copyright (C) 2024 Herb Miller
 # This file is distributed under the GPL3+.
 msgid ""
 msgstr ""
-"Project-Id-Version: oik-magnetic-poetry 0.3.0\n"
+"Project-Id-Version: oik-magnetic-poetry 0..0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/oik-magnetic-poetry\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Language: bb_BB\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-10-29T10:01:05+00:00\n"
+"POT-Creation-Date: 2024-09-23T10:27:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: oik-magnetic-poetry\n"
@@ -34,7 +34,8 @@ msgstr "https://herbmiller.me/author/herb"
 msgid "Code is Poetry"
 msgstr "Cdoe Is Peorty"
 
-#: build/index.js:1
+#: build/magnetic-poetry.js:123
+#: build/magnetic-poetry.js:108
 msgid "Write poetry"
 msgstr "Wirte peorty"
 
