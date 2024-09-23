@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright (C) Copyright Bobbing Wide 2019, 2021
+ * @copyright (C) Copyright Bobbing Wide 2019, 2021, 2024
  */
 
 /**
@@ -32,8 +32,7 @@ function oikmp_poetry_content( $content ) {
 		sp("mp");
 		$line = trim( $line );
 		oikmp_poetry_line( $line );
-		ep();
-
+		bw_echo( '</p>' );
 	}
 	ediv( "mp");
 }
@@ -64,16 +63,13 @@ function oikmp_rotter( $word ) {
 
 
 function oik_magnetic_poetry_example() {
-
-
 	sdiv( "mp");
 	sp();
 	oikmp_word( "I" );
 	oikmp_word( "sometimes" );
 	oikmp_word(  "play" );
 	oikmp_word( "golf" );
-	ep();
-
+	bw_echo( '</p>' );
 	sp();
 	oikmp_word( "Hit");
 	oikmp_word( "the" );
@@ -81,6 +77,7 @@ function oik_magnetic_poetry_example() {
 	oikmp_word( "in");
 	oikmp_word( "the");
 	oikmp_word( "air");
+	bw_echo( '</p>' );
 	ediv();
 	//bw_flush();
 	return bw_ret();
